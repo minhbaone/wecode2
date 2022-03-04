@@ -8,7 +8,7 @@
 #define MAXN 500000
 using namespace std;
 
-float ThuatToan1(int a[], int n) {
+double ThuatToan1(int a[], int n) {
     clock_t begin;
     clock_t end;
     begin = clock(); 
@@ -22,7 +22,7 @@ float ThuatToan1(int a[], int n) {
                 maxSum = thisSum;
         }
     end = clock(); 
-    return ((float)end-begin)/CLOCKS_PER_SEC ;
+    return ((double)end-begin)/CLOCKS_PER_SEC ;
 }
 
 float ThuatToan2(int a[], int n) {
@@ -37,6 +37,7 @@ float ThuatToan2(int a[], int n) {
         else if ( thisSum < 0 )
             thisSum = 0;
     }
+    cout << "  Max " << maxSum ;
     end = clock(); 
     return ((float)end-begin)/CLOCKS_PER_SEC ;
 }
@@ -48,15 +49,17 @@ void RandomArray(int a[], int n){
     }
 }
 int main(){
-    int a[MAXN], n, t1 ,t2;
-    int test[10]={10, 100, 1000, 10000, 100000, 200000, 300000, 400000, 500000}, ntest=5;
+    int a[MAXN], n ;
+    float t1,t2;
+    int test[10]={10, 100, 1000, 10000, 100000, 200000, 300000, 400000, 500000}, ntest=9;
     cout << "Hello" << endl ;
     for(int i=0  ; i < ntest ; i++){
         n=test[i];
+        cout <<"Thuan toan 1 test: "<<test[i];
         RandomArray(a, n);
         t1=ThuatToan1(a,n); 
-        // t2=ThuatToan2(a, n); 
-        cout << "Thoi gian: " << t1 << endl; ;
+         //t2=ThuatToan2(a, n); 
+        cout << "  Thoi gian: " << t1 << endl; ;
     }
     
     return 0;
