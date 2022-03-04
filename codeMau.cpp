@@ -25,7 +25,7 @@ double ThuatToan1(int a[], int n) {
     return ((double)end-begin)/CLOCKS_PER_SEC ;
 }
 
-float ThuatToan2(int a[], int n) {
+float ThuatToan4(int a[], int n) {
     clock_t begin;
     clock_t end;
     begin = clock(); 
@@ -55,11 +55,11 @@ int main(){
     cout << "Hello" << endl ;
     for(int i=0  ; i < ntest ; i++){
         n=test[i];
-        cout <<"Thuan toan 1 test: "<<test[i];
+        cout <<"Thuan toan 4 test: "<<test[i];
         RandomArray(a, n);
-        t1=ThuatToan1(a,n); 
-         //t2=ThuatToan2(a, n); 
-        cout << "  Thoi gian: " << t1 << endl; ;
+        //t1=ThuatToan1(a,n); 
+        t4=ThuatToan4(a, n); 
+        cout << "  Thoi gian: " << t4 << endl; ;
     }
     
     return 0;
